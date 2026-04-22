@@ -12,7 +12,7 @@ import pandas as pd
 import plotly.express as px
 
 df = pd.read_csv("IPUMS.csv")
-occ = pd.read_csv("Occupation_Codes.csv")
+occ = pd.read_csv("Occupation Codes.csv")
 occ["OCC Code"] = pd.to_numeric(occ["OCC Code"], errors="coerce")
 df = df.merge(occ, left_on="OCC", right_on="OCC Code", how="left")
 df = df.drop(columns=["YEAR", "STATEFIP", "OCC Code", "CITIZEN", "Unnamed: 3"], errors="ignore")
